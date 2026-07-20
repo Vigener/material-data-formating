@@ -3,13 +3,12 @@ import "./App.css";
 import FirstStep from "./components/firstStep";
 import Integration from "./components/integration";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import Const from "./Const";
 
 function App() {
   const [csv1, setCsv1] = useState("");
   const [data1, setData1] = useState("");
   // Access your API key as an environment variable (see "Set up your API key" above)
-  const genAI = new GoogleGenerativeAI(Const.GEMINI_API_KEY);
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || "");
 
   async function fetchGemini(data, systemInstruction) {
     // For text-only input, use the gemini-pro model

@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 Const.js
+.env
+.env.local
+.env.*.local
 
 # Editor directories and files
 .vscode/*
